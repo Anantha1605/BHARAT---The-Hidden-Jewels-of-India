@@ -16,7 +16,7 @@ min-height: 100vh;
 position: relative;
 overflow: hidden;
 background: linear-gradient(63.7deg, black, #333);
-width: auto;
+width: 150%;
 }
 
 .logo {
