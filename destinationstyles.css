@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+color: black; 
+font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+background: linear-gradient(63.7deg, black, #333);
+width: auto;
+}
+
+.logo {
+font-family: 'Montserrat', sans-serif;
+font-size: 32px;
+font-weight: bold;
+color: black; 
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+padding: 10px 20px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1000;
+box-sizing: border-box; 
+}
+
+.nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 15px;
+}
+
+.nav ul li {
+display: inline;
+}
+
+.nav ul li a {
+text-decoration: none;
+color: black; 
+font-weight: bold;
+font-size: 20px;
+transition: color 0.8s ease;
+}
+
+.nav ul li a:hover {
+color: #FFFFFF; 
+}
+
+button.home {
+background-color: transparent;
+border: none;
+color: white;
+padding: 0;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 0;
+cursor: pointer;
+border-radius: 12px;
+}
+button.home img{
+width: 30px;
+height: 30px;
+}
+
+button.home img:active{
+transform: scale(0.95);
+}
+
+.icon{
+width: 100px; 
+height: auto; 
+border-radius: 3px; 
+box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+margin: 5px;
+}
+:root{
+    --transition:cubic-bezier(0.1,0.7,0,1) ;
+}
+
+.info{
+    display: inline-flex;
+    gap: 5px;
+}
+.h2{
+    text-decoration: none;
+    color: black; 
+    font-weight: bold;
+    font-size: 25px;
+    transition: color 0.8s ease;
+}
+.h2:hover{
+    color: #FFFFFF;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.imgs-parent{
+    display: flex;
+    gap: .6rem;
+    perspective: 60rem;
+}
+.cimg{
+    width: 5.4rem;
+    height: 21rem;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 3s var(--transition), filter 3s var(--transition), width 3s var(--transition);
+    position: relative;
+    filter: grayscale(1) brightness(0.5);
+    will-change: transform, filter;
+}
+.cimg:hover{
+    transform: translateZ(18rem);
+    filter: inherit;
+}
+
+.cimg:hover + *{
+    transform: translateZ(14.6rem) rotateY(35deg);
+    z-index: -1;
+    filter: grayscale(.2) brightness(0.9);
+}
+.cimg:hover + * + *{
+    transform: translateZ(9.6rem) rotateY(40deg);
+    z-index: -2;
+    filter: grayscale(.4) brightness(0.8);
+}
+.cimg:hover + * + * + *{
+    transform: translateZ(4.2rem) rotateY(35deg);
+    z-index: -3;
+    filter: grayscale(.6) brightness(0.7);
+}
+.cimg:hover + * + * + * + *{
+    transform: translateZ(1.18rem) rotateY(20deg);
+    z-index: -4;
+    filter: grayscale(.8) brightness(0.6);
+}
+
+.cimg:has(+:hover){
+    transform: translateZ(14.6rem) rotateY(-35deg);
+    filter: grayscale(.2) brightness(0.9);
+}
+.cimg:has(+ * +:hover){
+    transform: translateZ(9.6rem) rotateY(-40deg);
+    filter: grayscale(.4) brightness(0.8);
+}
+.cimg:has(+ * + * +:hover){
+    transform: translateZ(4.2rem) rotateY(-35deg);
+    filter: grayscale(.6) brightness(0.7);
+}
+.cimg:has(+ * + * + * +:hover){
+    transform: translateZ(1.18rem) rotateY(-20deg);
+    filter: grayscale(.8) brightness(0.6);
+}
+
+.cimg::before, .cimg::after{
+    content: "";
+    position: absolute;
+    width: 1.25rem;
+    height: 100%;
+    right: -1.25rem;
+}
+.cimg::after{
+    left: -1.25rem;
+}
+.open{
+    width: 25vw;
+    transform: translateZ(17.735rem);
+    filter: inherit;
+    z-index: 1;
+    margin: 0 .45vw;
+}
+.text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: none;
+    font-size: 18px;
+    text-shadow: 4px 4px 9px #000; 
+    font-weight: 800; 
+    text-shadow: 4px 4px 9px #000, 2px 2px 5px #000; 
+    transition-delay: transform 0.8s;
+}
+
+.cimg.open .text-overlay {
+    display: block;
+    transition: opacity 2s;
+}
+
+.cimg.redirecting .text-overlay {
+    transition: opacity 2s;
+    opacity: 0;
+}
+
+.cimg.open {
+    transform: scale(1.5); 
+    z-index: 1;
+}
+
+.cimg.redirecting {
+    transform: scale(1.5); 
+}
+
+.cimg.enlarge {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: width 2s, height 2s, top 2s, left 2s;
+}
+
+.cimg.enlarged .text-overlay {
+    display: block;
+    opacity: 1;
+    transition: opacity 2s 2s; 
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
