@@ -1,269 +1,210 @@
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
-color: black; 
-font-family: 'Montserrat', sans-serif;
-margin: 0;
-padding: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-position: relative;
-overflow-x: scroll;
-overflow-y: hidden;
-background: linear-gradient(#e8e8e8,rgb(131, 131, 131));
-width: auto;
+    background-color: #eeeeea;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
 }
 
-body::-webkit-scrollbar {
-    height: 8px;
-}
-
-body::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Track background */
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #e1a34c; /* Scrollbar thumb color */
-    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: #d08a08; /* Darker color on hover */
-}
-
-.logo {
-font-family: 'Montserrat', sans-serif;
-font-size: 32px;
-font-weight: bold;
-color: black; 
-}
-
-.header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
-padding: 10px 20px;
-position: absolute;
-top: 0;
-left: 0;
-z-index: 1000;
-box-sizing: border-box; 
-}
-
-.nav ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex;
-gap: 15px;
-}
-
-.nav ul li {
-display: inline;
-}
-
-.nav ul li a {
-text-decoration: none;
-color: black; 
-font-weight: bold;
-font-size: 25px;
-transition: color 0.8s ease;
-}
-
-.nav ul li a:hover {
-color: #FFFFFF; 
-}
-
-button.home {
-background-color: transparent;
-border: none;
-color: white;
-padding: 0;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 0;
-cursor: pointer;
-border-radius: 12px;
-}
-button.home img{
-width: 30px;
-height: 30px;
-}
-
-button.home img:active{
-transform: scale(0.95);
-}
-
-.icon{
-width: 100px; 
-height: auto; 
-border-radius: 3px; 
-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-margin: 5px;
-}
-:root{
-    --transition:cubic-bezier(0.1,0.7,0,1) ;
-}
-
-.info{
-    display: inline-flex;
-    gap: 5px;
-}
-.h2{
-    text-decoration: none;
-    color: black; 
-    font-weight: bold;
-    font-size: 25px;
-    transition: color 0.8s ease;
-}
-.h2:hover{
-    color: #FFFFFF;
-}
-.wrapper{
+.wrapper {
+    width: 100vw; /* Full viewport width */
+    height: 125vh; /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    overflow: hidden; /* Prevent overflow */
 }
 
-.imgs-parent{
+.container {
+    height: calc(100vh - 50px); /* Adjust height to fit within viewport, accounting for padding */
     display: flex;
-    gap: .6rem;
-    perspective: 60rem;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 25px 0; /* Padding to ensure shadow is visible */
+    width: max-content; /* Adjust width to fit content */
+    position: relative; /* Ensure relative positioning for shadow containment */
+    background-color: transparent; /* Ensure no background color is applied */
 }
-.cimg{
-    width: 5.4rem;
-    height: 21rem;
+
+.card {
+    width: 80px;
+    height: 400px; /* Increased height to make the images longer */
+    border-radius: 2rem;
     background-size: cover;
-    background-position: center;
     cursor: pointer;
-    transition: transform 3s var(--transition), filter 3s var(--transition), width 3s var(--transition);
-    position: relative;
-    filter: grayscale(.44) brightness(0.5);
-    will-change: transform, filter;
-}
-.cimg:hover{
-    transform: translateZ(18rem);
-    filter: inherit;
-}
-
-.cimg:hover + *{
-    transform: translateZ(14.6rem) rotateY(35deg);
-    z-index: -1;
-    filter: grayscale(.2) brightness(0.9);
-}
-.cimg:hover + * + *{
-    transform: translateZ(9.6rem) rotateY(40deg);
-    z-index: -2;
-    filter: grayscale(.4) brightness(0.8);
-}
-.cimg:hover + * + * + *{
-    transform: translateZ(4.2rem) rotateY(35deg);
-    z-index: -3;
-    filter: grayscale(.6) brightness(0.7);
-}
-.cimg:hover + * + * + * + *{
-    transform: translateZ(1.18rem) rotateY(20deg);
-    z-index: -4;
-    filter: grayscale(.8) brightness(0.6);
+    overflow: hidden;
+    margin: 0 10px; /* Margin to ensure cards do not overlap */
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.8); /* Ensure shadow is visible */
+    filter: grayscale(.125);
+    flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
-.cimg:has(+:hover){
-    transform: translateZ(14.6rem) rotateY(-35deg);
-    filter: grayscale(.2) brightness(0.9);
-}
-.cimg:has(+ * +:hover){
-    transform: translateZ(9.6rem) rotateY(-40deg);
-    filter: grayscale(.4) brightness(0.8);
-}
-.cimg:has(+ * + * +:hover){
-    transform: translateZ(4.2rem) rotateY(-35deg);
-    filter: grayscale(.6) brightness(0.7);
-}
-.cimg:has(+ * + * + * +:hover){
-    transform: translateZ(1.18rem) rotateY(-20deg);
-    filter: grayscale(.8) brightness(0.6);
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.cimg::before, .cimg::after{
-    content: "";
-    position: absolute;
-    width: 1.25rem;
-    height: 100%;
-    right: -1.25rem;
-}
-.cimg::after{
-    left: -1.25rem;
-}
-.open{
-    width: 25vw;
-    transform: translateZ(17.735rem);
-    filter: inherit;
-    z-index: 1;
-    margin: 0 .45vw;
-}
-.text-overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    display: none;
-    font-size: 18px;
-    text-shadow: 4px 4px 9px #000; 
-    font-weight: 800; 
-    text-shadow: 4px 4px 9px #000, 2px 2px 5px #000; 
-    transition-delay: transform 0.8s;
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
 }
 
-.cimg.open .text-overlay {
-    display: block;
-    transition: opacity 2s;
-}
-
-.cimg.redirecting .text-overlay {
-    transition: opacity 2s;
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
     opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
 }
 
-.cimg.open {
-    transform: scale(1.5); 
-    z-index: 1;
+.description p {
+    color: #ffffff;
+    padding-top: 5px;
 }
 
-.cimg.redirecting {
-    transform: scale(1.5); 
+a {
+    color: transparent;
 }
 
-.cimg.enlarge {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: width 2s, height 2s, top 2s, left 2s;
+.description a h4 {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 800;
 }
 
-.cimg.enlarged .text-overlay {
-    display: block;
-    opacity: 1;
-    transition: opacity 2s 2s; 
+a:hover {
+    color: #000000;
+    transition: .4s ease;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Your existing background images for cards */
+
+.card[for="c1"] {
+    background-image: url('https://i0.wp.com/triparambh.com/wp-content/uploads/2019/07/KumbhalgarhCoverPic.jpg?w=1920&ssl=1');
+}
+
+.card[for="c2"] {
+    background-image: url('https://vargiskhan.com/log/wp-content/uploads/2022/04/places-to-visit-in-gurez-valley-4.jpg');
+}
+
+.card[for="c3"] {
+    background-image: url('https://www.bikatadventures.com/images/BlogspotContents/BlogspotImageUrl44536-Bikat-Adventures.jpg');
+}
+
+.card[for="c4"] {
+    background-image: url('https://www.exoticmiles.com/cities/munsiyari/');
+}
+
+.card[for="c5"] {
+    background-image: url('https://www.luxurytrailsofindia.com/wp-content/uploads/2017/09/morni-hills-lake.jpg');
+}
+
+.card[for="c6"] {
+    background-image: url('https://www.tripbibo.com/blog/wp-content/uploads/2020/08/Kapurthala-1024x768.jpg');
+}
+
+.card[for="c7"] {
+    background-image: url('https://projectmehrauli.com/assets/img/gallery/imgonline-com-ua-CompressToSize-Cwx2HMPb4kHPGxA.jpg');
+}
+
+.card[for="c8"] {
+    background-image: url('https://www.holidify.com/images/bgImages/BHANDARDARA.jpg');
+}
+
+.card[for="c9"] {
+    background-image: url('https://i0.wp.com/www.re-thinkingthefuture.com/wp-content/uploads/2022/11/A8469-An-architectural-review-of-location-Patan-Gujarat.jpg?w=999');
+}
+
+.card[for="c10"] {
+    background-image: url('https://static.toiimg.com/img/101558257/Master.jpg');
+}
+
+.card[for="c11"] {
+    background-image: url('https://media2.thrillophilia.com/images/photos/000/130/901/original/1533185640_Cenotaphs_orchha.jpg?gravity=center&width=752&height=450&crop=fill&quality=auto&fetch_format=auto&flags=strip_profile&format=jpg&sign_url=true');
+}
+
+.card[for="c12"] {
+    background-image: url('https://www.theeraulaa.in/wp-content/uploads/2020/11/IMG_8060-scaled.jpg');
+}
+
+.card[for="c13"] {
+    background-image: url('https://vajiram-prod.s3.ap-south-1.amazonaws.com/Valmiki_Tiger_Reserve_VTR_02fdfb6271.jpg');
+}
+
+.card[for="c14"] {
+    background-image: url('https://s3.india.com/travel/wp-content/uploads/2015/10/bishnupur.jpg');
+}
+
+.card[for="c15"] {
+    background-image: url('https://cdn.shopify.com/s/files/1/1657/2397/files/C4.jpg?v=1517717474');
+}
+
+.card[for="c16"] {
+    background-image: url('https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/12/20130020/netarhat-1.jpeg');
+}
+
+.card[for="c17"] {
+    background-image: url('https://travespert.com/blogs/wp-content/uploads/sites/2/2023/04/ziro-Valley.webp');
+}
+
+.card[for="c18"] {
+    background-image: url('https://www.savaari.com/blog/wp-content/uploads/2023/10/Travel.Earth_.jpg');
+}
+
+.card[for="c19"] {
+    background-image: url('https://horizons.tatatrusts.org/2020/december/images/share/floating-feeling-01.jpg');
+}
+
+.card[for="c20"] {
+    background-image: url("https://knowledgeofindia.com/wp-content/uploads/2020/01/Tuirihiau-Waterfall-In-Mizoram.jpg");
+}
+
+.card[for="c21"] {
+    background-image: url("https://www.travelgangtok.com/uploads/destinations/DT-4039-9089/109735273_310674166738885_6222988915280023774_n.jpg");
+}
+
+.card[for="c22"] {
+    background-image: url("https://images.moneycontrol.com/static-mcnews/2024/01/Unakoti-rocks-Tripura-2.jpg?impolicy=website&width=1600&height=900");
 }
