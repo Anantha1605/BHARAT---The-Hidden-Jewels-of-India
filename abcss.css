@@ -1,0 +1,177 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: hsl(0, 0%, 100%);
+    color: hsl(240, 10%, 3.9%);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .hero-section {
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: zoomIn 10s infinite alternate ease-in-out;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  }
+  
+  .hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    text-align: center;
+    color: white;
+    animation: slideUp 2s ease-out;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hero-content p {
+    margin-top: 16px;
+    max-width: 800px;
+    font-size: 1.25rem;
+  }
+  
+  .form-section {
+    background: white;
+    padding: 48px 0;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .form-container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  
+  .form-container h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .form-container p {
+    margin-top: 16px;
+    text-align: center;
+    color: hsl(240, 3.8%, 45%);
+    font-size: 1.25rem;
+  }
+  
+  .trip-form {
+    margin-top: 32px;
+    display: grid;
+    gap: 24px;
+  }
+  
+  .form-row {
+    display: grid;
+    gap: 24px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: hsl(240, 3.8%, 45%);
+    margin-bottom: 8px;
+  }
+  
+  .form-group select,
+  .form-group input,
+  .form-group button {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid hsl(240, 5.9%, 90%);
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .form-group select:hover,
+  .form-group input:hover,
+  .form-group button:hover {
+    transform: scale(1.05);
+  }
+  
+  .form-group button {
+    background: hsl(240, 5.9%, 10%);
+    color: hsl(0, 0%, 98%);
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .form-group button:hover {
+    background: hsl(240, 5.9%, 15%);
+  }
+  
+  /* Animations */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes textGlow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+  }
+  
+
+  
