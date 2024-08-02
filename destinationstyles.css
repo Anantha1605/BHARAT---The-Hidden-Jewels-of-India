@@ -208,3 +208,31 @@ input:checked + label .description {
 .card[for="c22"] {
     background-image: url("https://images.moneycontrol.com/static-mcnews/2024/01/Unakoti-rocks-Tripura-2.jpg?impolicy=website&width=1600&height=900");
 }
+
+.card[for="c23"] {
+    background-image: url("https://live-liamtra-blog.s3.ap-south-1.amazonaws.com/2021/11/A-trail-in-the-valley-leading-to-more-beautiful-places--1024x585.png");
+}
+
+.card[for="c24"] {
+    background-image: url("https://ihplb.b-cdn.net/wp-content/uploads/2023/02/Feature-750x430.jpg");
+}
+
+.card[for="c25"] {
+    background-image: url("https://www.keralatourism.org/images/picture/large/Ponnani_Beach_2835.jpg");
+}
+
+.card[for="c26"] {
+    background-image: url("https://www.travelure.in/wp-content/uploads/2022/07/Warangal-Fort-Header-1.jpg");
+}
+
+.card[for="c27"] {
+    background-image: url("https://www.seawatersports.com/img/newimage/places/parthasarathy-temple.png");
+}
+
+.card[for="c28"] {
+    background-image: url("https://cdn.britannica.com/68/252368-050-C456B7A4/Living-root-bridge-tree-Cherrapunji-Meghalaya-India.jpg");
+}
+
+.card[for="c29"] {
+    background-image: url("https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/12/16180328/Sun-Temple-1600x900.jpg");
+}
