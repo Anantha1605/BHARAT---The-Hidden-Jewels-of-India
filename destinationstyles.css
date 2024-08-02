@@ -6,17 +6,18 @@
 }
 
 body {
-    background-color: #eeeeea;
+    background: radial-gradient(circle, #423f3f, #000);
     overflow-x: hidden; /* Prevent horizontal scrolling */
     overflow-y: hidden; /* Prevent vertical scrolling */
 }
 
 .wrapper {
+    margin-top: 205px;
     width: 100vw; /* Full viewport width */
     height: 125vh; /* Full viewport height */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     overflow: hidden; /* Prevent overflow */
 }
 
