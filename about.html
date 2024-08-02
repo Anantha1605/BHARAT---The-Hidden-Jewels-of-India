@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    height: 200vh;
+    width: 100vw;
+    background-color: black;
+    margin: 0;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  #title {
+    position: relative;
+    top: 125px;
+    left: -65%;
+    font-size: 6.5rem;
+    color: white;
+    transition: transform 0.5s ease;
+    font-family: "Playfair Display",serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    justify-content: baseline;
+    gap:50vh;
+    align-items: center;
+  }
+
+  #image-track {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 2%;
+    top: calc(50% + 250px);
+    transform: translate(0%, -50%);
+    user-select: none;
+  }
+
+  #image-track > .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    filter: brightness(50%);
+    transition: filter 0.3s ease;
+  }
+
+  #image-track > .image:hover {
+    filter: brightness(100%);
+  }
+
+  #about-us {
+    position: absolute;
+    top: calc(50% + 500px);
+    color: white;
+    font-family: "Inconsolata", monospace;
+    padding: 20px;
+    margin-left: -200px;
+    right: 100px;
+    max-width: 800px;
+    margin: 30px auto;
+    line-height: 1.6;
+    transition: transform 0.5s ease, font-size 0.5s ease;
+    transform: translateX(-200%);
+    font-size: 2rem;
+  }
+
+  #about-us.active {
+    transform: translateX(-25%);
+    font-size: 4rem;
+  }
+
+  #about-us h2 {
+    font-family: "Noto Serif", serif;
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  #about-us p {
+    font-size: 1.2rem;
+  }
+
+  #about-us ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  #about-us ul li {
+    font-size: 1.2rem;
+  }
+
+  .custom-cursor {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+
+  .custom-cursor.active {
+    transform: scale(1);
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s;
+  }
+  a:hover{
+    color: bisque;
+  }
+</style>
+
+<body>
+  <div id="title">About Us
+  <a href="menu.html" style="font-size: 40px;">Menu</a>
+</div>
+  <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <img class="image" src="https://images.unsplash.com/photo-1519955266818-0231b63402bc?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" />
+    <img class="image" src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" />
+    <img class="image" src="https://i.pinimg.com/736x/95/85/30/958530d4edfb1dd0ac0adf06da26c15f.jpg" draggable="false" />
+    <img class="image" src="https://media.istockphoto.com/id/1186330177/photo/south-indian-traditional-meal.jpg?s=612x612&w=0&k=20&c=NDF5jgsgmWU-sLsiIsOILf4v6J6bN2Ushgkg-72P0vc=" draggable="false" />
+    <img class="image" src="https://i.pinimg.com/736x/4f/11/fb/4f11fb991d01ce3b0cb942703df03d89.jpg" draggable="false" />
+    <img class="image" src="https://i.pinimg.com/736x/52/32/59/523259e16e4b6514cf9ceed30fa8401e.jpg" draggable="false" />
+    <img class="image" src="https://images.unsplash.com/photo-1615196451843-54c40a46d1e9?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" />
+    <img class="image" src="https://plus.unsplash.com/premium_photo-1671490809136-ef694acc76d2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" />
+  </div>
+
+  <div id="about-us">
+    <h2>Welcome to भारत | The Jewels Of India</h2>
+    <p>Your ultimate guide to discovering the hidden gems of India. We are your gateway to discovering the enchanting, less-trodden paths of this incredible country, providing you with unique travel experiences far from the usual crowded spots.</p>
+    
+    <h2>Who Are We?</h2>
+    <p>We are a team of passionate travelers, explorers, and storytellers who believe that every corner of India has a story to tell. Our story started with a quest to uncover India's secret wonders and share their beauty with the world. From secluded mountain villages and pristine beaches to ancient towns and undiscovered natural marvels, we are here to ignite your spirit of adventure.</p>
+    
+    <h2>Our Vision</h2>
+    <p>We envision a world where travelers go beyond the usual routes and explore the uncharted territories. We aim to create a community of explorers who appreciate the beauty of offbeat destinations, contributing to sustainable tourism and supporting local communities.</p>
+    
+    <h2>What We Offer</h2>
+    <ul>
+      <li><strong>Immersive Guides:</strong> Dive deep into the history, culture, and beauty of lesser-known destinations through our meticulously crafted guides.</li>
+      <li><strong>Expert Travel Tips:</strong> Navigate your adventures with confidence using our practical travel tips, from the best times to visit to insider advice on local customs and transport.</li>
+      <li><strong>Inspirational Stories:</strong> Get inspired by the captivating travelogues and personal experiences of fellow explorers who have ventured into India's hidden gems.</li>
+      <li><strong>Sustainable Travel Insights:</strong> Learn how to travel responsibly, leaving a positive impact on the communities and environments you encounter.</li>
+    </ul>
+    
+    <h2>Join Us</h2>
+    <p>Whether you're an avid traveler or someone looking for a unique getaway, We are here to help you explore the unexplored. Together, let's unveil the hidden wonders of India and create stories that last a lifetime.</p>
+  </div>
+
+  <div class="custom-cursor" id="custom-cursor"></div>
+
+  <script>
+    const title = document.getElementById("title");
+    const track = document.getElementById("image-track");
+    const customCursor = document.getElementById("custom-cursor");
+
+    const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+    const handleOnUp = () => {
+      track.dataset.mouseDownAt = "0";  
+      track.dataset.prevPercentage = track.dataset.percentage;
+    }
+
+    const handleOnMove = e => {
+      if(track.dataset.mouseDownAt === "0") return;
+
+      const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+            maxDelta = window.innerWidth / 2;
+
+      const percentage = (mouseDelta / maxDelta) * -100,
+            nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+
+      // Calculate the max percentage value to prevent over-scrolling
+      const imageWidthVmin = 40; // width in vmin
+      const imageGapVmin = 4; // gap in vmin
+      const totalImages = 8;
+      const additionalMarginPx = 27; // additional margin in pixels
+      const viewportWidthVmin = (window.innerWidth / window.innerHeight) * 100;
+      const trackWidthVmin = (imageWidthVmin + imageGapVmin) * totalImages - imageGapVmin;
+
+      // Convert additional margin from pixels to vmin
+      const additionalMarginVmin = additionalMarginPx * (window.innerHeight / window.innerWidth);
+
+      // Max percentage calculation
+      const maxPercentage = -((trackWidthVmin - viewportWidthVmin) / trackWidthVmin) * 100 - (additionalMarginVmin / trackWidthVmin) * 100;
+
+      const constrainedPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), maxPercentage);
+
+      track.dataset.percentage = constrainedPercentage;
+
+      track.animate({
+        transform: `translate(${constrainedPercentage}%, -50%)`
+      }, { duration: 1200, fill: "forwards" });
+
+      for(const image of track.getElementsByClassName("image")) {
+        image.animate({
+          objectPosition: `${100 + constrainedPercentage}% center`
+        }, { duration: 1200, fill: "forwards" });
+      }
+    }
+
+    window.onmousedown = e => handleOnDown(e);
+    window.ontouchstart = e => handleOnDown(e.touches[0]);
+    window.onmouseup = e => handleOnUp(e);
+    window.ontouchend = e => handleOnUp(e.touches[0]);
+    window.onmousemove = e => handleOnMove(e);
+    window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+    const aboutUs = document.getElementById("about-us");
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const aboutUsPosition = aboutUs.offsetTop;
+
+      if (scrollPosition >= aboutUsPosition - window.innerHeight / 2) {
+        aboutUs.classList.add("active");
+      } else {
+        aboutUs.classList.remove("active");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    document.querySelectorAll('.image').forEach(image => {
+      image.addEventListener('mouseenter', () => {
+        customCursor.classList.add('active');
+        document.body.style.cursor = 'none';
+      });
+      image.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('active');
+        document.body.style.cursor = 'auto';
+      });
+      image.addEventListener('mousemove', (e) => {
+        customCursor.style.left = `${e.pageX}px`;
+        customCursor.style.top = `${e.pageY}px`;
+      });
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!e.target.classList.contains('image')) {
+        customCursor.classList.remove('active');
+        document.body.style.cursor = 'auto';
+      }
+    });
+
+    title.style.transform = `translateX(100vw)`;
+  </script>
+</body>
+</html>

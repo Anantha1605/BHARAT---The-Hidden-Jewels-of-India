@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHARAT: The Jewels of India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nabla&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Bebas+Neue&family=Berkshire+Swash&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Bebas+Neue&family=Berkshire+Swash&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Bebas+Neue&family=Berkshire+Swash&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Foldit:wght@100..900&family=Great+Vibes&family=Honk&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Script&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width:100%;
+        height: 530vh;
+        background: #000;
+        font-family: "Oswald", sans-serif;
+        overflow-x: hidden;
+    }
+    h1{
+        margin: 0.25em 0;
+        font-size: 80px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+    }
+    p{
+        font-family: "Oswald", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 175%;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        padding: 1em;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        z-index: 2;
+        background-color: #000000;
+        margin-bottom: 50px;
+        border-bottom: 1px solid rgb(255, 211, 136);
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        margin-right: 50px;
+    }
+    .links a{
+        transition: 0.5s;
+    }
+    .links a:hover{
+        color: #f7cd62;
+    }
+    nav a{
+        text-decoration: none;
+        color:bisque;
+        font-weight: 500;
+    }
+    .logo a{
+        font-size: 28px;
+    }
+    .logotitle a{
+        font-size: 60px;
+        margin-left: 30vh;
+        transition: 0.5s;
+    }
+    .logotitle a:hover{
+        color: #f7cd62;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto;
+    }
+    .curtain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgb(27, 27, 27);
+        z-index: 9999; 
+        transition: height 0.6s ease-in-out;
+    }
+
+    .curtain.show {
+        height: 100%;
+    }
+
+    .lottie-container{
+        position: fixed;
+        width: 100vh;
+        height: 100vh;
+
+        padding-left: 40%;
+        top: 0;
+        z-index: -1;
+        filter: saturate(2);
+    }
+    .lottie-container h1{
+        color: rgb(212, 193, 159);
+        font-family: "Abril Fatface", serif;
+    }
+    .lottie-container p{
+        color: rgb(186, 150, 125);
+        font-family: "Major Mono Display", monospace;
+    }
+    .main-title-pic {
+        display: flex;
+        height: 160vh;
+    }
+
+    .gradient-left, .gradient-right {
+        width: 25%;
+        height: 200vh;
+    }
+
+    .content-container {
+        width: 50%;
+        height: 200vh;
+        background-color: #000000be;
+        font-family: "Pacifico", cursive;
+    }
+    .content-container p {
+        font-family: 'Pacifico', cursive;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 175%;
+        background: linear-gradient(to right, #adbac6, #d6e8d8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .gradient-left {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 64, 233, 0.505) 0%,
+            rgba(255, 162, 0, 0.505) 100%
+        );
+    }
+
+    .gradient-right {
+        background: linear-gradient(
+            180deg,
+            rgba(105, 255, 68, 0.505) 0%,
+            rgba(31, 42, 255, 0.505) 100%
+        );
+    }
+    .vertical-text {
+        position: absolute;
+        writing-mode: vertical-lr; 
+        color: white;
+        font-size: 25vh;
+        font-family: "Bebas Neue", sans-serif;
+        text-align: center;
+        top: 200%; 
+        left: 5%; 
+        letter-spacing: 1vh; 
+        transform: translateY(-50%) scaleY(-1) scaleX(-1);
+        white-space: nowrap; 
+        overflow: hidden; 
+}
+
+    .right-text {
+        right: 4%; 
+        left: auto; 
+    }
+    .website-content,.website-content1{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 2em;
+        background: #000000;
+        color:bisque;
+        z-index: 1;
+    }
+    .website-content1{
+        height: 120vh;
+    }
+    .end-lottie {
+        position: absolute;
+        top:100vh;
+        width:100%;
+        height: 1px;
+        background: rgb(255, 255, 255);
+    }
+
+    button {
+        margin: 1rem;
+        font-family: "Berkshire Swash", serif;
+    }
+ 
+    .btn {
+        background-color: var(--background-color);
+        color: bisque;
+        padding: .5em 1em;
+        border: solid bisque;
+        outline: none;
+        position: relative;
+        cursor: pointer;
+
+        --background-color: #000000;
+        --border-size: 7px;
+        --accent-color: rgb(255, 199, 103);
+    }
+    .btn.btn-border-underline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: var(--border-size);
+        background-color: var(--accent-color);
+        transition: transform 300ms ease-in-out;
+        transform: scaleX(0);
+    }
+
+    .btn.btn-border-underline:hover::before,
+    .btn.btn-border-underline:focus::before {
+        transform: scaleX(1);
+    }
+
+    .text {
+        font-size: 8vw;
+        letter-spacing: -.01em;
+        line-height: 130%;
+        margin: 0;
+        
+        width: 100%;
+        color: rgba(0, 254, 42, 0.2);
+        background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 0%;
+        transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s;
+        
+        border-bottom: 1px solid #2F2B28;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+    }
+
+span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ff3c9d;
+  color: #0D0D0D;
+  
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform-origin: center;
+  transition: all cubic-bezier(.1,.5,.5,1) 0.4s;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text:hover > span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.number-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.number {
+    font-size: 10rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.banner{
+    width: 100%;
+    height: 120vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.banner .content .model{
+
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-position: top center;
+    z-index: 0;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+}
+
+footer {
+    margin-top: 110%;
+    background-color: #0c0800;
+    color: bisque;
+    padding: 2em 0;
+    text-align: center;
+    font-size: smaller;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-info, .quick-links, .social-media {
+    margin-bottom: 1em;
+}
+
+.footer-content h3 {
+    margin-bottom: 0.5em;
+}
+
+.footer-content a {
+    color: #8090d6;
+    text-decoration: none;
+    margin: 0 0.5em;
+    transition: 0.3s;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+    color:#c77d8c
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1em;
+}
+.text-container {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 96px;
+  color: white;
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  padding: 5%;
+  overflow: hidden;
+}
+
+.text-gradient-main { 
+    font-size: 200px;
+    line-height: 1;
+    font-family: "Honk", system-ui;
+    white-space: nowrap;
+    position: absolute;
+    animation: scrollText 80s linear infinite;
+}
+@keyframes scrollText {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+:root {
+  --color-bg1: rgb(0, 0, 0);
+  --color-bg2: rgb(0, 0, 0);
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --color5: 180, 180, 50;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+.gradient-bg {
+  width: 100vw;
+  height: 120vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: -5vh;
+    
+  svg {
+    display: none;
+  }
+
+
+  .gradients-container {
+    filter: url(#goo) blur(40px) ;
+    width: 100%;
+    height: 100%;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+  }
+
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+  }
+
+  .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.7;
+  }
+}
+  </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Gold Black Elegant Luxury Travel Logo_20240727_122613_0000.png" alt="BHARAT: The Jewels of India">
+            </a>
+        </div>
+        <div class="logotitle">
+            <a href="index.html">
+                BHARAT: The Jewels of India
+            </a>
+        </div>
+        <div class="links">
+            <a href="index.html">home</a>
+            <a href="menu.html">menu</a>
+            <a href="#" class="scroll-to-bottom">contact</a>
+            <a href="about.html">about us</a>
+        </div>
+    </nav>
+    <section class="website-content1">
+        <div class="text-container">
+            <p class="text-gradient-main"><br><br>Welcome to an exquisite exploration of the rich and vibrant tapestry of our land. Delve into a world where heritage meets opulence, where the beauty of our cultural diversity shines with unmatched splendor.</p>
+          </div>
+          <div class="gradient-bg">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                  <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+              </defs>
+            </svg>
+            <div class="gradients-container">
+              <div class="g1"></div>
+              <div class="g2"></div>
+              <div class="g3"></div>
+              <div class="g4"></div>
+              <div class="g5"></div>
+              <div class="interactive"></div>
+            </div>
+          </div>
+    </section>
+    <section class="main-title-pic">
+        <div class="gradient gradient-left">
+            <div class="vertical-text left-text">ready for</div>
+        </div>
+        <div class="content-container">
+            <div style="color: white; text-align: center; font-size: 25px; margin-top: 5.5%;">
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <button class="btn btn-border-underline" title="Click to Book Your Adventure!" style="font-size: 20px; padding: 1em 2em;">Book Now</button><br>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>          
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                <p>"Discover Magic, Uncover Mysteries, Embrace India"</p>
+                                
+                
+            </div>
+        </div>
+        <div class="gradient gradient-right">
+            <div class="vertical-text right-text">your next trip?</div>
+        </div>
+    </section>
+            
+    
+    <section class="website-content">
+        <h1 class="text">
+            <span>Richness.</span>
+            Explore.<br>
+        </h1>
+        <h1 class="text">
+            <span>Greatness.</span>
+            Discover.<br>
+        </h1>
+        <h1 class="text">
+            <span>Majesty.</span>
+            Journey.<br>
+        </h1>
+        <h1 class="text">
+            <span>Elegance.</span>
+            Experience.
+        </h1>
+        <br><br><br>
+        <p>Explore the vibrant and diverse landscapes of India with our carefully curated travel experiences. From the majestic palaces of Rajasthan to the serene backwaters of Kerala, our theme centers around discovering the rich cultural heritage and natural beauty of this incredible country. Join us on a journey through India's hidden gems and renowned landmarks, where every corner tells a story and every moment is an adventure.</p>
+    
+        <div class="number-container">
+            <h1 class="text" style="align-items: center;"><span style="align-items: center; background-color: #ff4c4c;">+ satisfied customers.</span>
+            <div class="number" data-number="1500000">0</div>
+            </h1>
+        </div>
+        <div class="number-container">
+            <h1 class="text" style="align-items: center;"><span style="align-items: center; background-color: #96f8ff;">+ outlets all across India.</span>
+            <div class="number" data-number="200">0</div>
+            </h1>
+        </div>
+        <div class="number-container">
+            <h1 class="text" style="align-items: center;"><span style="align-items: center; background-color: #73ff6b;">+ bookings right now.</span>
+            <div class="number" data-number="1250">0</div>
+            </h1>
+        </div>
+        <br><br>
+        <br><br>
+        <div class="banner">
+            <div class="slider" style="--quantity: 10">
+                <div class="item" style="opacity: 0.75; --position: 1"><img src="https://images.pexels.com/photos/574313/pexels-photo-574313.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.5; --position: 2"><img src="https://images.pexels.com/photos/2792601/pexels-photo-2792601.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 3"><img src="https://images.pexels.com/photos/1583244/pexels-photo-1583244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 4"><img src="https://images.pexels.com/photos/1065753/pexels-photo-1065753.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 5"><img src="https://images.pexels.com/photos/2526935/pexels-photo-2526935.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 6"><img src="https://images.pexels.com/photos/3476860/pexels-photo-3476860.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 7"><img src="https://images.pexels.com/photos/2780244/pexels-photo-2780244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 8"><img src="https://images.pexels.com/photos/3367460/pexels-photo-3367460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 9"><img src="https://images.pexels.com/photos/2780309/pexels-photo-2780309.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+                <div class="item" style="opacity: 0.75; --position: 10"><img src="https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" draggable="false"></div>
+            </div>
+            <br><br><br><br><br><br>
+    </section>
+    
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:queries@bharat.com">queries@bharat.com</a></p>
+            <p>Phone: &nbsp 9424345464 / 8978675645</p>
+            <p>Address:<a href="https://maps.app.goo.gl/vQRjdmF71XuuWKen7"> GB Road, Chameli Chowk, Raju Nagar, New Delhi, India</p></a>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 BHARAT: The Jewels of India. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const textElements = gsap.utils.toArray('.text');
+
+textElements.forEach(text => {
+  gsap.to(text, {
+    backgroundSize: '100%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: text,
+      start: 'center 80%',
+      end: 'center 20%',
+      scrub: true,
+    },
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const numbers = document.querySelectorAll('.number');
+
+    const animateNumbers = () => {
+        numbers.forEach(number => {
+            const targetNumber = parseInt(number.getAttribute('data-number'), 10);
+            let currentNumber = 0;
+
+            const updateNumber = () => {
+                if (currentNumber < targetNumber) {
+                    currentNumber += Math.ceil(targetNumber / 100);
+                    number.textContent = Math.min(currentNumber, targetNumber);
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    number.textContent = targetNumber;
+                }
+            };
+
+            updateNumber();
+        });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, {
+        threshold: 0.5 
+    });
+
+    const numberSection = document.querySelector('.number-container');
+    if (numberSection) {
+        observer.observe(numberSection);
+    }
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetUrl = this.href;
+
+    const curtain = document.createElement('div');
+    curtain.classList.add('curtain');
+    document.body.appendChild(curtain);
+
+    setTimeout(() => {
+      curtain.classList.add('show');
+    }, 10);
+
+    curtain.addEventListener('transitionend', () => {
+      window.location.href = targetUrl;
+    });
+  });
+});
+
+document.querySelector('.scroll-to-bottom').addEventListener('click', function(e) {
+  e.preventDefault();
+
+
+  const scrollPosition = document.body.scrollHeight - window.innerHeight;
+
+  
+  window.scrollTo({
+    top: scrollPosition,
+    behavior: 'smooth'
+  });
+});
+
+</script>
+
+</html>

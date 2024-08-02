@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>explore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+    background: radial-gradient(circle, rgb(47, 47, 47), rgb(3, 3, 3));/* Circular gradient */
+    background-position: center, 0 0; /* Center the gradient and position polka dots */
+    background-blend-mode: overlay; /* Blend mode to combine the layers */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    cursor: none;
+    }
+
+    #gallery {
+      height: 140vmax;
+      width: 140vmax;  
+      position: absolute;
+      z-index: 2;
+    }
+
+    .tile {
+      border-radius: 1vmax;
+      position: absolute;
+      transition: transform 800ms ease;
+    }
+
+    .tile::before {
+        content: attr(data-title); /* Use data-title attribute to set title */
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 2rem; /* Adjust as needed */
+        color: rgb(255, 255, 255);
+        font-weight: lighter;
+        text-shadow:1cap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3; /* Ensure the title appears above the tile background but below hover effects */
+        pointer-events: none; /* Prevent title from interfering with tile interactions */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .tile:hover {
+      transform: scale(1.1);
+    }
+
+    .tile:hover > img {
+      opacity: 1;
+      transform: scale(1.01);
+    }
+
+    .tile > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 800ms ease,
+        transform 800ms ease;
+    }
+
+    .tile:nth-child(1) {
+      background-color: rgb(255, 213, 75);
+      height: 11.2%;
+      width: 16%;
+      left: 6%;
+      top: 9%;
+    }
+
+  .tile:nth-child(2) {
+    background-color: rgb(245, 66, 66);
+    height: 19.2%;
+    width: 11.2%;
+    left: 42%;
+    top: 12%;
+  }
+
+  .tile:nth-child(3) {
+    background-color: rgb(45, 181, 79);
+    height: 14.4%;
+    width: 12.8%;
+    left: 12%;
+    top: 34%;
+  }
+
+  .tile:nth-child(4) {
+    background-color: rgb(60, 194, 235);
+    height: 15%;
+    width: 17.8%;
+    left: 42%;
+    top: 48%;
+  }
+
+  .tile:nth-child(5) {
+    background-color: rgb(84, 195, 162);
+    height: 12.8%;
+    width: 25.6%;
+    left: 8%;
+    top: 70%;
+  }
+
+  .tile:nth-child(6) {
+    background-color: rgb(255, 128, 38);
+    height: 19.2%;
+    width: 19.2%;
+    left: 68%;
+    top: 8%;
+  }
+
+  .tile:nth-child(7) {
+    background-color: rgb(255, 103, 189);
+    height: 12.8%;
+    width: 16%;
+    left: 50%;
+    top: 79%;
+  }
+
+  .tile:nth-child(8) {
+    background-color: rgb(255, 101, 132);
+    height: 19.2%;
+    width: 14.4%;
+    left: 72%;
+    top: 42%;
+  }
+
+  .tile:nth-child(9) {
+    background-color: rgb(181, 124, 255);
+    height: 18%;
+    width: 14%;
+    left: 78%;
+    top: 74%;
+  }
+
+  .tile:nth-child(10) {
+    background-color: rgb(40, 40, 40);
+    height: 7%;
+    width: 120%;
+    left: 0%;
+    top: 94%;
+  }
+
+  .tile:nth-child(11) {
+    background-color: rgb(41, 41, 41);
+    height: 7%;
+    width: 120%;
+    left: 0%;
+    top: -1%;
+  }
+
+    .tile:nth-child(10)::before { 
+        content: "menu"; 
+    } 
+    .tile:nth-child(11)::before { 
+        content: "menu"; 
+    } 
+
+    .tile:nth-child(1)::before { content: "Languages"; }
+    .tile:nth-child(2)::before { content: "Festivals"; }
+    .tile:nth-child(3)::before { content: "Architecture"; }
+    .tile:nth-child(4)::before { content: "Cuisine"; }
+    .tile:nth-child(5)::before { content: "Music & Dance"; }
+    .tile:nth-child(6)::before { content: "Wildlife & Nature"; }
+    .tile:nth-child(7)::before { content: "Historical Figures"; }
+    .tile:nth-child(8)::before { content: "Arts & Crafts"; }
+    .tile:nth-child(9)::before { content: "Traditional Clothing"; }
+
+    .title-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+
+    .title-container h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 10rem;
+      margin: 0;
+      font-weight: lighter;
+    }
+
+    .title-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin: 0;
+      color: rgb(193, 193, 193);
+      font-weight: lighter;
+    }
+
+    #custom-cursor {
+        position: fixed; /* Fixed position to follow the cursor */
+        width: 20px;
+        height: 20px;
+        background-color: white; /* White color */
+        border-radius: 50%; /* Make it a circle */
+        pointer-events: none; /* Ensure it doesn't interfere with other elements */
+        z-index: 9999; /* High z-index to be on top */
+        transform: translate(-50%, -50%); /* Center the cursor circle */
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.1s ease;
+    }
+
+    .tile:hover ~ #custom-cursor {
+        width: 60px; /* Double the normal size */
+        height: 60px; /* Double the normal size */
+    }
+
+    #polka-dots {
+        position: fixed; /* Keep it fixed in the background */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; /* Place it behind other content */
+        background-image: radial-gradient(circle, rgba(255, 0, 0, 0.5) 1px, transparent 1px); /* Initial RGB color */
+        background-size: 50px 50px; /* Size of the dots and spacing */
+        animation: color-change 10s infinite; /* Animation for color change */
+        transition: background-image 1s ease-in-out;
+    }
+
+    @keyframes color-change {
+        0% {
+            background-image: radial-gradient(circle, rgba(255, 0, 0, 0.5) 1px, transparent 1px); /* Red */
+        }
+        20% {
+            background-image: radial-gradient(circle, rgba(255, 165, 0, 0.5) 1px, transparent 1px); /* Orange */
+        }
+        40% {
+            background-image: radial-gradient(circle, rgba(255, 255, 0, 0.5) 1px, transparent 1px); /* Yellow */
+        }
+        60% {
+            background-image: radial-gradient(circle, rgba(0, 255, 0, 0.5) 1px, transparent 1px); /* Green */
+        }
+        80% {
+            background-image: radial-gradient(circle, rgba(0, 255, 255, 0.5) 1px, transparent 1px); /* Cyan */
+        }
+        100% {
+            background-image: radial-gradient(circle, rgba(255, 0, 0, 0.5) 1px, transparent 1px); /* Red */
+        }
+    }
+  </style>
+</head>
+
+<body>
+    <div id="polka-dots"></div>
+    <div class="title-container">
+        <h1>explore</h1>
+        <h2>redefine travelling.</h2>
+    </div>
+    <div id="gallery">
+        <div class="tile">
+        <img src="https://media.istockphoto.com/id/1201079464/vector/india-poster.jpg?s=612x612&w=0&k=20&c=8BGBQuK0Y-js_V38g3bBM28nljvjKWvvi3uAdsaXB90=" />
+        </div>
+        <div class="tile">
+            <img src="https://images.pexels.com/photos/3367459/pexels-photo-3367459.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="tile">
+            <img src="https://images.unsplash.com/photo-1566816874952-efe670a52a9a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+        <div class="tile">
+            <img src="https://media.istockphoto.com/id/922783734/photo/assorted-indian-recipes-food-various.jpg?b=1&s=612x612&w=0&k=20&c=E3vvDbtewANz5LzhBrQn0raezKaATj6aeOPWlxYn4ZE=" />
+        </div>
+        <div class="tile">
+            <img src="https://media.gettyimages.com/id/558387659/photo/girls-dancing-bharatanatyam.jpg?s=612x612&w=0&k=20&c=TPXL_NTs8C72JpW8c-GQJZWxZDHY2JyY-AInuxaUvuI=" />
+        </div>
+        <div class="tile">
+            <img src="https://images.unsplash.com/photo-1623494342806-791ae5450a54?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+        <div class="tile">
+            <img src="https://t4.ftcdn.net/jpg/04/57/13/89/240_F_457138917_CMIfwv6U785yncAzsJ9sgUKypWyFxE64.jpg" />
+        </div>
+        <div class="tile">
+            <img src="https://t4.ftcdn.net/jpg/07/78/82/65/240_F_778826532_A33xmHZzYEcAjYvrUcgb0luh8JhgXnDo.jpg" />
+        </div>
+        <div class="tile">
+            <img src="https://media.istockphoto.com/id/849698772/photo/bollywood-dancers-dress.jpg?s=612x612&w=0&k=20&c=GWYgE1KBmDvmkVoBAZlvqyz6E58i0-Tk_8SnQRzfMPA=" />
+        </div>
+        <div class="tile">
+      </div>
+      <div class="tile">
+      </div>
+    </div>
+</body>
+
+<script>
+    const gallery = document.getElementById("gallery");
+  
+    window.onmousemove = e => {
+      const mouseX = e.clientX,
+            mouseY = e.clientY;
+      
+      const xDecimal = mouseX / window.innerWidth,
+            yDecimal = mouseY / window.innerHeight;
+      
+      const maxX = gallery.offsetWidth - window.innerWidth,
+            maxY = gallery.offsetHeight - window.innerHeight;
+      
+      const panX = maxX * xDecimal * -1,
+            panY = maxY * yDecimal * -1;
+      
+      gallery.animate({
+        transform: `translate(${panX}px, ${panY}px)`}, 
+        {
+        duration: 4000,
+        fill: "forwards",
+        easing: "ease" })
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // Create a div element for the custom cursor
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    // Move the cursor div to follow the mouse
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+
+    const tileUrls = [
+        "languages.html",
+        "festival.html",
+        "architecture.html",
+        "food.html",
+        "musicanddance.html",
+        "wildlifeandnature.html",
+        "history.html",
+        "artsandcrafts.html",
+        "clothes.html",
+        "menu.html",
+        "menu.html"
+    ];
+
+    // Handle mouse hover over rectangles
+    const tiles = document.querySelectorAll('.tile');
+
+    tiles.forEach((tile, index) => {
+      tile.addEventListener('mouseenter', () => {
+        cursor.style.width = '60px'; // Increase size on hover
+        cursor.style.height = '60px'; // Increase size on hover
+      });
+
+      tile.addEventListener('mouseleave', () => {
+        cursor.style.width = '30px'; // Reset to normal size
+        cursor.style.height = '30px'; // Reset to normal size
+      });
+
+      tile.addEventListener('click', () => {
+        window.location.href = tileUrls[index]; // Redirect to the corresponding URL
+      });
+    });
+  });
+
+
+  </script>

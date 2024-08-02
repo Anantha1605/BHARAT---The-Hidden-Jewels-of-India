@@ -1,0 +1,128 @@
+body {
+    background-color: #000000; /* Black background */
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* Black background for the header */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem; /* Increased font size */
+    margin: 0;
+    font-weight: lighter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title-container {
+    text-align: center;
+    flex-grow: 1;
+  }
+  .subtitle {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    display: block; /* Ensure it displays as a block element */
+  }
+  a {
+    text-decoration: none;
+    color: inherit; /* Inherit the text color from the parent element */
+  }
+  button {
+    margin: 1rem;
+  }
+  button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 110%;
+    left: -40%;
+    z-index: 1;
+    background: #000000;
+    border: 1px solid #000000;
+    padding: 5px;
+    font-size: 14px;
+    width: max-content;
+  }
+  .btn {
+    background-color: var(--background-color);
+    color: #ffffff;
+    padding: .5em 1em;
+    border: solid white;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+
+    --background-color: #000000;
+    --border-size: 2px;
+    --accent-color: rgb(255, 255, 255);
+  }
+  .btn.btn-border-underline::before {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: var(--accent-color);
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+  }
+
+  .btn.btn-border-underline:hover::before,
+  .btn.btn-border-underline:focus::before {
+    transform: scaleX(1);
+  }
+
+  .container {
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    top: 74.5px; /* Adjust this value to move the container lower from the top */
+    height: calc(100vh - 150px); /* Subtract the header height */
+    width: 65%;
+    background-color: #ffffff; /* White container */
+    padding: 20px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    pointer-events: auto;
+  }
+  .container h1{
+    margin-left: 5%;
+    font-size: 4rem;
+  }
+  .content {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333; /* Dark grey text color for better readability */
+  }
+  #polka-dots {
+    position: fixed; /* Keep it fixed in the background */
+    top: 0;   
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Place it behind other content */
+    background-image: radial-gradient(circle, rgb(255, 255, 255) 1px, transparent 1px); /* Polka dots */
+    background-size: 50px 50px; /* Size of the dots and spacing */
+  }
+
+  .image {
+  width: 20vmin;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  }
+
+  .image[data-status="inactive"] {
+  display: none;
+  }
+
+  .image[data-status="active"] {
+  display: block;
+  }

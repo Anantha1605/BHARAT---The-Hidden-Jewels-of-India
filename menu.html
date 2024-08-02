@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<style>
+
+:root {
+  --g1: rgb(0, 0, 0);
+  --g2: rgb(0, 0, 0);
+}
+
+body {
+  background: linear-gradient(
+    to right,
+    var(--g1),
+    var(--g2),
+    var(--g1)
+  );
+  background-size: 200%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+  cursor: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+#menu {  
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 10vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 60%;
+}
+
+
+
+#menu-background-image {
+  background-image: url("https://images.pexels.com/photos/8828586/pexels-photo-8828586.jpeg?cs=srgb&dl=pexels-lara-jameson-8828586.jpg&fm=jpg");
+  background-position: center 70%;
+  background-size: 100vmax;
+  height: 100%;
+  left: 0px;
+  opacity: 0.4;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100%;
+  z-index: 0;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 120vmax;
+  opacity: 0.1;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1; 
+}
+
+.menu-item {
+  color: rgb(202, 202, 202);
+  cursor: pointer;
+  display: block;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  font-size: clamp(3rem, 3.5vw, 8rem);
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  text-decoration: none;
+  transition: opacity 400ms ease;
+}
+
+#vertical-title {
+  position: absolute;
+  right: 2rem;
+  bottom: 3rem;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 30vw, 13rem);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  opacity: 0.3;
+  transition: opacity 400ms ease;
+  transform: rotate(180deg); 
+  z-index: 2;
+}
+
+#vertical-title:hover {
+  opacity: 1;
+}
+
+#dot,
+#ball {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#dot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  z-index: 10; 
+}
+
+#ball {
+  width: 30px; 
+  height: 30px; 
+  border: 2px solid #4c403d;
+  background: transparent;
+  z-index: 99; 
+}
+
+</style>
+
+<body>
+    <div id="menu">
+      <div id="vertical-title">MENU</div>
+        <div id="menu-items">
+          <div class="menu-item"><a href="index.html">Home</a></div>
+          <div class="menu-item"><a href="explore.html">Explore</a></div>
+          <div class="menu-item"><a href="destinations.html">Destinations</a></div>
+          <div class="menu-item"><a href="about.html">About Us</a></div>
+        </div>
+        <div id="menu-background-image"></div>
+      </div>
+      <div id="dot"></div>
+      <div id="ball"></div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</body>
+
+<script>
+    const menu = document.getElementById("menu");
+
+Array.from(document.getElementsByClassName("menu-item"))
+  .forEach((item, index) => {
+    item.onmouseover = () => {
+      menu.dataset.activeIndex = index;
+    }
+  });
+
+  var mouse = { x: 0, y: 0 };
+var dotPos = { x: 0, y: 0 };
+var ballPos = { x: 0, y: 0 };
+var dotRatio = 0.2;
+var ballRatio = 0.1;
+var dot = document.getElementById("dot");
+var ball = document.getElementById("ball");
+var isMouseMoving = false;
+var idleTimer;
+var ballAnimation;
+
+// Başlangıçta ball öğesini ortala
+gsap.set(dot, { xPercent: -50, yPercent: -50 });
+gsap.set(ball, { xPercent: -50, yPercent: -50 });
+
+// Fare hareketini algılayan fonksiyon
+document.addEventListener("mousemove", (e) => {
+  mouse.x = e.pageX;
+  mouse.y = e.pageY;
+  isMouseMoving = true;
+  clearTimeout(idleTimer); // Zamanlayıcıyı sıfırla
+  idleTimer = setTimeout(() => {
+    isMouseMoving = false;
+  }, 2000); // 2 saniye hareketsizlikten sonra aktif değil
+});
+
+// Dot ve ball pozisyonlarını güncelle
+gsap.ticker.add(() => {
+  // Dot hareketi
+  dotPos.x += (mouse.x - dotPos.x) * dotRatio;
+  dotPos.y += (mouse.y - dotPos.y) * dotRatio;
+  gsap.set(dot, { x: dotPos.x, y: dotPos.y });
+
+  // Ball hareketi (dot'u takip eder)
+  ballPos.x += (dotPos.x - ballPos.x) * ballRatio;
+  ballPos.y += (dotPos.y - ballPos.y) * ballRatio;
+  gsap.set(ball, { x: ballPos.x, y: ballPos.y });
+
+  // Fare hareketsizken ball büyüyüp küçülsün
+  if (!isMouseMoving && !ballAnimation) {
+    ballAnimation = gsap
+      .timeline({ repeat: -1, yoyo: true, ease: "power1.inOut" })
+      .to(ball, { scale: 1.2, duration: 0.75 });
+  } else if (isMouseMoving && ballAnimation) {
+    ballAnimation.kill();
+    ballAnimation = null;
+    gsap.to(ball, { scale: 1, duration: 0.75, ease: "power1.inOut" });
+  }
+});
+
+</script>
