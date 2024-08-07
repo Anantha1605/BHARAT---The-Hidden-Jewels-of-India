@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu</title>
-  <link rel="icon" href="logo black.png" type="image/x-icon">
+  <title>test</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -29,7 +29,6 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0px;
-  cursor: none;
 }
 
 a{
@@ -90,7 +89,7 @@ a{
   background-size: 100vmax;
   height: 100%;
   left: 0px;
-  opacity: 0.4;
+  opacity: 0.2;
   position: absolute;
   top: 0px;
   transition: opacity 800ms ease,
@@ -212,34 +211,27 @@ var isMouseMoving = false;
 var idleTimer;
 var ballAnimation;
 
-// Başlangıçta ball öğesini ortala
 gsap.set(dot, { xPercent: -50, yPercent: -50 });
 gsap.set(ball, { xPercent: -50, yPercent: -50 });
 
-// Fare hareketini algılayan fonksiyon
 document.addEventListener("mousemove", (e) => {
   mouse.x = e.pageX;
   mouse.y = e.pageY;
   isMouseMoving = true;
-  clearTimeout(idleTimer); // Zamanlayıcıyı sıfırla
+  clearTimeout(idleTimer);
   idleTimer = setTimeout(() => {
     isMouseMoving = false;
-  }, 2000); // 2 saniye hareketsizlikten sonra aktif değil
+  }, 2000); 
 });
 
-// Dot ve ball pozisyonlarını güncelle
 gsap.ticker.add(() => {
-  // Dot hareketi
   dotPos.x += (mouse.x - dotPos.x) * dotRatio;
   dotPos.y += (mouse.y - dotPos.y) * dotRatio;
   gsap.set(dot, { x: dotPos.x, y: dotPos.y });
-
-  // Ball hareketi (dot'u takip eder)
   ballPos.x += (dotPos.x - ballPos.x) * ballRatio;
   ballPos.y += (dotPos.y - ballPos.y) * ballRatio;
   gsap.set(ball, { x: ballPos.x, y: ballPos.y });
 
-  // Fare hareketsizken ball büyüyüp küçülsün
   if (!isMouseMoving && !ballAnimation) {
     ballAnimation = gsap
       .timeline({ repeat: -1, yoyo: true, ease: "power1.inOut" })
