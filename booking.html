@@ -13,30 +13,30 @@
   <body>
     <header class="header">
       <nav class="navbar">
-        <a href="index.html">Home</a>
+        <a href="#">Home</a>
         <a href="menu.html">Menu</a>
         <a href="destination.html">Destination</a>
         <a href="about.html">About Us</a>
       </nav>
-      <a href="#book-form" class="btn">Book Now</a> <!-- Updated to link to form -->
+      <a href="#book-form" class="btn">Book Now</a>
     </header>
 
     <section class="home" id="home">
       <div class="content">
         <span>Follow us</span>
         <h3>to the unknown</h3>
-        <p>Let's unveil the hidden wonders of India and create stories that last a lifetime</p>
-        <a href="#book-form" class="btn">Book Now</a> <!-- Updated to link to form -->
+        <p>let's unveil the hidden wonders of India and create stories that last a lifetime</p>
+        <a href="#book-form" class="btn">Book Now</a>
       </div>
     </section>
 
-  <br><br> <br><br><br><br><br> <br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
     <section class="book-form" id="book-form">
-      <form action="">
+      <form action="" method="post">
         <div class="inputBox">
           <span>Destination</span>
-          <select id="destination">
+          <select id="destination" required>
             <option value="" disabled selected>Select a destination</option>
             <option value="delhi">Delhi</option>
             <option value="haryana">Haryana</option>
@@ -81,48 +81,76 @@
           <input type="number" id="guests" min="1" max="10" required>
         </div>
 
+        <div class="inputBox">
+          <span>Name</span>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="inputBox">
+          <span>Email</span>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="inputBox">
+          <span>Contact</span>
+          <input type="text" id="contact" name="contact" required>
+        </div>
+
+        <div class="inputBox">
+          <span>Credit Card Number</span>
+          <input type="text" id="creditCard" name="creditCard" required>
+        </div>
+
+        <div class="inputBox">
+          <span>Expiry Date</span>
+          <input type="date" id="expiry" required>
+        </div>
+
         <input type="submit" value="Find now" class="btn">
       </form>
     </section>
 
     <footer>
       <div class="footer-content">
-          <div class="contact-info">
-              <h3>Contact Us</h3>
-              <p>Email: <a href="mailto:queries@bharat.com">queries@bharat.com</a></p>
-              <p>Phone: &nbsp 9424345464 / 8978675645</p>
-              <p>Address:<a href="https://maps.app.goo.gl/vQRjdmF71XuuWKen7"> GB Road, Chameli Chowk, Raju Nagar, New Delhi, India</p></a>
-          </div>
-          <div class="quick-links">
-              <h3>Quick Links</h3>
-              <a href="index.html">Home</a>
-              <a href="menu.html">Menu</a>
-              <a href="contact.html">Contact</a>
-              <a href="about.html">About Us</a>
-          </div>
-          <div class="social-media">
-              <h3>Follow Us</h3>
-              <a href="https://facebook.com" target="_blank">Facebook</a>
-              <a href="https://twitter.com" target="_blank">Twitter</a>
-              <a href="https://instagram.com" target="_blank">Instagram</a>
-              <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          </div>
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:queries@bharat.com">queries@bharat.com</a></p>
+          <p>Phone: 9424345464 / 8978675645</p>
+          <p>Address: <a href="https://maps.app.goo.gl/vQRjdmF71XuuWKen7">GB Road, Chameli Chowk, Raju Nagar, New Delhi, India</a></p>
+        </div>
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
       </div>
       <div class="footer-bottom">
-          <p>&copy; 2024 BHARAT: The Jewels of India. All rights reserved.</p>
+        <p>&copy; 2024 BHARAT: The Jewels of India. All rights reserved.</p>
       </div>
-  </footer>  
+    </footer>  
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const form = document.querySelector("form");
         form.addEventListener("submit", function(event) {
-          event.preventDefault(); // Prevent form submission
+          event.preventDefault(); // Prevent form submission initially
 
           const destination = document.getElementById("destination").value;
           const checkin = document.getElementById("checkin").value;
           const checkout = document.getElementById("checkout").value;
           const guests = document.getElementById("guests").value;
+          const email = document.getElementById("email").value;
+          const creditCard = document.getElementById("creditCard").value;
+          const expiry = document.getElementById("expiry").value;
 
           // Validation
           if (!destination) {
@@ -146,12 +174,35 @@
             return;
           }
 
-          // If all validations pass, show success message and reload the page
+          // Email validation
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          // Credit card validation
+          function isValidCreditCardNumber(value) {
+            const regex = /^\d{16}$/; // 16 digits
+            return regex.test(value);
+          }
+
+          if (!isValidCreditCardNumber(creditCard)) {
+            alert("Please enter a valid credit card number (16 digits).");
+            return;
+          }
+
+          // Expiry date validation
+          const expiryDate = new Date(expiry);
+          const currentDate = new Date();
+          if (expiryDate < currentDate) {
+            alert("The expiry date must be in the future.");
+            return;
+          }
+
+          // If all validations pass, show success message and submit the form
           alert("Form submitted successfully!"); // Placeholder for actual submission
-          form.reset(); // Reset the form fields
-          setTimeout(function() {
-            location.reload(); // Reload the page after 2 seconds
-          }, 2000);
+          form.submit(); // Submits the form
         });
       });
     </script>
