@@ -106,11 +106,11 @@ body{
     margin-left: 600px;
 }
 .navbar a {
-    color: var(--light-color);
+    color: rgb(207, 177, 112);
     font-size: 1.3rem;
 }
 .navbar a:hover {
-    color: var(--blue);
+    color: rgb(207, 177, 112);
 }
 
 
