@@ -71,7 +71,7 @@ body{
     display: inline-block;
     padding: 0.3rem 1.5rem;
     font-size: 1.3rem; 
-    color: var(--blue);
+    color: rgb(207, 177, 112);
     border-radius: 5rem;
     cursor: pointer;
     border: 0.2rem solid var(--blue);
