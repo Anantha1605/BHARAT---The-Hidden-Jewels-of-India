@@ -36,6 +36,7 @@ header a{
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
+    transform: 0.5s ease;
 }
 .carousel .list .item img{
     width: 100%;
@@ -316,4 +317,4 @@ running time
     .carousel .list .item .content .title{
         font-size: 30px;
     }
-} 
+}
