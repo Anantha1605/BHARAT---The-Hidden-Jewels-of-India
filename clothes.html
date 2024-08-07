@@ -40,7 +40,48 @@
     .container h1{
       color: rgb(48, 35, 88);
     }
-</style>
+    footer {
+    background-color: #0c0800;
+    color: bisque;
+    padding: 2em 0;
+    text-align: center;
+    font-size: smaller;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-info, .quick-links, .social-media {
+    margin-bottom: 1em;
+}
+
+.footer-content h3 {
+    margin-bottom: 0.5em;
+}
+
+.footer-content a {
+    color: #8090d6;
+    text-decoration: none;
+    margin: 0 0.5em;
+    transition: 0.3s;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+    color:#c77d8c
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1em;
+}
+    </style>
 </head>
 <body>
   <div id="polka-dots">
@@ -121,5 +162,34 @@
 <img class="image" data-index="8" data-status="inactive" src="https://media.istockphoto.com/id/504183268/vector/set-of-international-people-in-traditional-costumes-around-the-world.jpg?s=612x612&w=0&k=20&c=AtzUwBOC3B_rOnbLfPrq9bU0rYXnwvpQ1-bFJnzSVm8=" />
 <img class="image" data-index="9" data-status="inactive" src="https://media.istockphoto.com/id/1226402910/vector/beautiful-indian-woman-in-traditional-sari-on-background-of-palace-interior-vector.jpg?s=612x612&w=0&k=20&c=eOUsHuc5mipsA6W_KKcN90KXRdaeHOTYtXOHtUTmNr4=" />
 </body>
+
+<footer>
+    <div class="footer-content">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:queries@bharat.com">queries@bharat.com</a></p>
+            <p>Phone: &nbsp 9424345464 / 8978675645</p>
+            <p>Address:<a href="https://maps.app.goo.gl/vQRjdmF71XuuWKen7">SVNIT, Keval Chowk, Ichchanath, Surat, India</p></a>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 BHARAT: The Jewels of India. All rights reserved.</p>
+    </div>
+</footer>
+
 
 </html>
