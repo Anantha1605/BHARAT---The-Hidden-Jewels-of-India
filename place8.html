@@ -174,55 +174,85 @@
     </div>
 
     <script>
-        //step 1: get DOM
-let nextDom = document.getElementById('next');
-let prevDom = document.getElementById('prev');
+            // Step 1: Get DOM elements
+    let nextDom = document.getElementById('next');
+    let prevDom = document.getElementById('prev');
 
-let carouselDom = document.querySelector('.carousel');
-let SliderDom = carouselDom.querySelector('.carousel .list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-let timeDom = document.querySelector('.carousel .time');
+    let carouselDom = document.querySelector('.carousel');
+    let sliderDom = carouselDom.querySelector('.carousel .list');
+    let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+    let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+    let timeDom = document.querySelector('.carousel .time');
 
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 6000;
-let timeAutoNext = 11000;
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    let timeRunning = 4000; // Reduced time for faster transitions
+    let timeAutoNext = 5000; // Reduced time for faster auto next
 
-nextDom.onclick = function(){
-    showSlider('next');    
-}
-
-prevDom.onclick = function(){
-    showSlider('prev');    
-}
-let runTimeOut;
-let runNextAuto = setTimeout(() => {
-    next.click();
-}, timeAutoNext)
-function showSlider(type){
-    let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
-    
-    if(type === 'next'){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-    }else{
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
+    nextDom.onclick = function() {
+        showSlider('next');
     }
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    }, timeRunning);
 
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
-        next.click();
-    }, timeAutoNext)
-}
-    </script>
+    prevDom.onclick = function() {
+        showSlider('prev');
+    }
+
+    let runTimeOut;
+    let runNextAuto = setTimeout(() => {
+        nextDom.click();
+    }, timeAutoNext);
+
+    function showSlider(type) {
+        let sliderItemsDom = sliderDom.querySelectorAll('.carousel .list .item');
+        let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+        
+        if (type === 'next') {
+            sliderDom.appendChild(sliderItemsDom[0]);
+            thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+            carouselDom.classList.add('next');
+        } else {
+            sliderDom.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+            thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+            carouselDom.classList.add('prev');
+        }
+        clearTimeout(runTimeOut);
+        runTimeOut = setTimeout(() => {
+            carouselDom.classList.remove('next');
+            carouselDom.classList.remove('prev');
+        }, timeRunning);
+
+        clearTimeout(runNextAuto);
+        runNextAuto = setTimeout(() => {
+            nextDom.click();
+        }, timeAutoNext);
+    }
+
+    // Add click event listeners to thumbnail items for direct navigation
+    thumbnailItemsDom.forEach((thumbnail, index) => {
+        thumbnail.onclick = function() {
+            // Find the current index of the active thumbnail
+            let activeIndex = Array.from(thumbnailItemsDom).indexOf(thumbnailBorderDom.querySelector('.item'));
+            
+            // Calculate the difference in indexes
+            let difference = index - activeIndex;
+
+            // If the clicked thumbnail is ahead of the active one
+            if (difference > 0) {
+                for (let i = 0; i < difference; i++) {
+                    showSlider('next');
+                }
+            } 
+            // If the clicked thumbnail is behind the active one
+            else if (difference < 0) {
+                for (let i = 0; i < Math.abs(difference); i++) {
+                    showSlider('prev');
+                }
+            }
+        }
+    });
+
+    // Initial call to set the correct state
+    showSlider('next');
+
+        </script>
 </body>
 </html>
